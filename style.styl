@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+//Primary
+$red = hsl(0, 100%, 74%)
+$green = hsl(154, 59%, 51%)
+
+//Accent
+$blue = hsl(248, 32%, 49%)
+
+//Neutral
+$dark-blue = hsl(249, 10%, 26%)
+$grayish-blue = hsl(246, 25%, 77%)
+
+
+*
+  margin 0
+  padding 0
+  font-family: 'Poppins', sans-serif;
+
+body
+  background-image url("./images/bg-intro-mobile.png")
+  background-color $red
+  display flex
+  justify-content center
+  align-items center
+  min-height 100vh
+  height 100%
+  @media (min-width: 1110px)
+    background-image url("./images/bg-intro-desktop.png")
+
+.container
+  display flex
+  flex-direction column
+  width 325px
+  margin 3rem 0
+  @media (min-width: 1110px)
+    width 1110px
+    flex-direction row
+
+header
+  display flex
+  flex-direction column
+  color white
+  text-align center
+  @media (min-width: 1110px)
+    margin-right 4rem
+    text-align left
+    justify-content center
+
+  h1
+    font-weight 600
+    line-height 1.3em
+    font-size 28px
+    margin-top 3rem
+    @media (min-width: 1110px)
+      font-size 50px
+      margin-top 0
+      line-height 1.1em
+
+  p
+    margin-top 2rem
+    text-align center
+    @media (min-width: 1110px)
+      text-align left
+
+main
+  display flex
+  flex-direction column
+  margin-top 3rem
+  width 100%
+  @media (min-width: 1110px)
+    width 540px
+    flex-shrink 0
+    margin-top 0
+
+  .try-it
+    color white
+    text-align center
+    background-color $blue
+    border-radius .5rem
+    padding 1rem 3rem
+    box-shadow 0 8px 0 0 rgba($dark-blue,20%)
+    font-weight 400
+    span
+      font-weight 600
+
+.card
+  margin-top 1.5rem
+  border-radius .5rem
+  background-color white
+  padding 1.5rem
+  box-shadow 0 8px 0 0 rgba($dark-blue,20%)
+  @media (min-width: 1110px)
+    padding 2.5rem
+
+  p
+    text-align center
+    font-size 11px
+    padding 0 1rem
+    margin-top 1rem
+    color $grayish-blue
+    a
+      color $red
+      font-weight 600
+
+form
+  display flex
+  flex-direction column
+
+  div
+    display flex
+    flex-direction column
+    margin-bottom 1rem
+    position relative
+
+  .error_icon
+    position absolute
+    right 1rem
+    top 1rem
+
+  .error_message
+    color $red
+    text-align right
+    font-size 12px
+    margin-top .3rem
+
+  input
+    padding 1rem 1rem
+    border 1px solid rgba($grayish-blue,70%)
+    border-radius .2rem
+    color $dark-blue
+    font-weight 600
+    @media (min-width: 1110px)
+      padding 1rem 1.5rem
+
+    &:focus
+      border-color $dark-blue
+    &:focus-visible
+      outline-color $dark-blue
+
+  button
+    padding 1rem 1rem
+    background-color $green
+    border none
+    border-radius .5rem
+    color white
+    text-transform uppercase
+    font-size 16px
+    letter-spacing 0.05em
+    box-shadow inset 0px -3px 4px darken($green,30%)
+    &:hover
+      background-color lighten($green,30%)
+
+
+.border-red
+  border 2px solid $red
+  color $red
+  &::-webkit-input-placeholder
+    color $red

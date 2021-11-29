@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background-image: url("./images/bg-intro-mobile.png");
+  background-color: #ff7a7a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+}
+@media (min-width: 1110px) {
+  body {
+    background-image: url("./images/bg-intro-desktop.png");
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 325px;
+  margin: 3rem 0;
+}
+@media (min-width: 1110px) {
+  .container {
+    width: 1110px;
+    flex-direction: row;
+  }
+}
+header {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+}
+@media (min-width: 1110px) {
+  header {
+    margin-right: 4rem;
+    text-align: left;
+    justify-content: center;
+  }
+}
+header h1 {
+  font-weight: 600;
+  line-height: 1.3em;
+  font-size: 28px;
+  margin-top: 3rem;
+}
+@media (min-width: 1110px) {
+  header h1 {
+    font-size: 50px;
+    margin-top: 0;
+    line-height: 1.1em;
+  }
+}
+header p {
+  margin-top: 2rem;
+  text-align: center;
+}
+@media (min-width: 1110px) {
+  header p {
+    text-align: left;
+  }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  width: 100%;
+}
+@media (min-width: 1110px) {
+  main {
+    width: 540px;
+    flex-shrink: 0;
+    margin-top: 0;
+  }
+}
+main .try-it {
+  color: #fff;
+  text-align: center;
+  background-color: #6055a5;
+  border-radius: 0.5rem;
+  padding: 1rem 3rem;
+  box-shadow: 0 8px 0 0 rgba(62,60,73,0.2);
+  font-weight: 400;
+}
+main .try-it span {
+  font-weight: 600;
+}
+.card {
+  margin-top: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  box-shadow: 0 8px 0 0 rgba(62,60,73,0.2);
+}
+@media (min-width: 1110px) {
+  .card {
+    padding: 2.5rem;
+  }
+}
+.card p {
+  text-align: center;
+  font-size: 11px;
+  padding: 0 1rem;
+  margin-top: 1rem;
+  color: #b9b6d3;
+}
+.card p a {
+  color: #ff7a7a;
+  font-weight: 600;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  position: relative;
+}
+form .error_icon {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+form .error_message {
+  color: #ff7a7a;
+  text-align: right;
+  font-size: 12px;
+  margin-top: 0.3rem;
+}
+form input {
+  padding: 1rem 1rem;
+  border: 1px solid rgba(185,182,211,0.7);
+  border-radius: 0.2rem;
+  color: #3e3c49;
+  font-weight: 600;
+}
+@media (min-width: 1110px) {
+  form input {
+    padding: 1rem 1.5rem;
+  }
+}
+form input:focus {
+  border-color: #3e3c49;
+}
+form input:focus-visible {
+  outline-color: #3e3c49;
+}
+form button {
+  padding: 1rem 1rem;
+  background-color: #38cc8c;
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  box-shadow: inset 0px -3px 4px #259162;
+}
+form button:hover {
+  background-color: #74dbae;
+}
+.border-red {
+  border: 2px solid #ff7a7a;
+  color: #ff7a7a;
+}
+.border-red::-webkit-input-placeholder {
+  color: #ff7a7a;
+}

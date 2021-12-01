@@ -38,23 +38,39 @@
                     @submit.prevent="validateForm()"
             >
                 <div>
-                    <input name="first_name" type="text" placeholder="First Name" x-model="first_name.value" :class="first_name.validated ? '' : 'border-red'"/>
+                    <input name="first_name"
+                           type="text"
+                           placeholder="First Name"
+                           x-model="first_name.value"
+                           :class="first_name.validated ? '' : 'border-red'"/>
                     <span x-text="first_name.message" class="error_message"></span>
                     <img src="./images/icon-error.svg" class="error_icon" x-show="!first_name.validated">
                 </div>
 
                 <div>
-                    <input name="last_name" type="text" placeholder="Last Name" x-model="last_name.value" :class="last_name.validated ? '' : 'border-red'"/>
+                    <input name="last_name"
+                           type="text"
+                           placeholder="Last Name"
+                           x-model="last_name.value"
+                           :class="last_name.validated ? '' : 'border-red'"/>
                     <span x-text="last_name.message" class="error_message"></span>
                     <img src="./images/icon-error.svg" class="error_icon" x-show="!last_name.validated">
                 </div>
                 <div>
-                    <input name="email" type="text" placeholder="Email Address" x-model="email.value" :class="email.validated ? '' : 'border-red'"/>
+                    <input name="email"
+                           type="text"
+                           placeholder="Email Address"
+                           x-model="email.value"
+                           :class="email.validated ? '' : 'border-red'"/>
                     <span x-text="email.message" class="error_message"></span>
                     <img src="./images/icon-error.svg" class="error_icon" x-show="!email.validated">
                 </div>
                 <div>
-                    <input name="password" type="password" placeholder="Password" x-model="password.value" :class="password.validated ? '' : 'border-red'"/>
+                    <input name="password"
+                           type="password"
+                           placeholder="Password"
+                           x-model="password.value"
+                           :class="password.validated ? '' : 'border-red'"/>
                     <span x-text="password.message" class="error_message"></span>
                     <img src="./images/icon-error.svg" class="error_icon" x-show="!password.validated">
                 </div>
@@ -71,53 +87,53 @@
 <script>
     document.addEventListener('alpine:init', () => {
         Alpine.data('form', () => ({
-            first_name : {
+            first_name: {
                 value: '',
                 validated: true,
                 message: '',
             },
-                last_name : {
+            last_name: {
                 value: '',
                 validated: true,
                 message: '',
             },
-            email : {
+            email: {
                 value: '',
                 validated: true,
                 message: '',
             },
-            password : {
+            password: {
                 value: '',
                 validated: true,
                 message: '',
             },
 
 
-            validateForm(){
-                this.validate(this.first_name,'First Name')
-                this.validate(this.last_name,'Last Name')
-                this.validate(this.email,'Email')
-                this.validate(this.password,'Password')
-                if(
+            validateForm() {
+
+                this.validate(this.first_name, 'First Name')
+                this.validate(this.last_name, 'Last Name')
+                this.validate(this.email, 'Email')
+                this.validate(this.password, 'Password')
+                if (
                     this.first_name.validated === true &&
                     this.last_name.validated === true &&
                     this.email.validated === true &&
                     this.password.validated === true
-                ){
-                   $el.submit()
-               }
+                ) {
+                    this.$el.submit();
+                }
 
             },
 
-            validate(field,label){
-                console.log(field,label)
-                if (field.value.length === 0){
+            validate(field, label) {
+                if (field.value.length === 0) {
                     field.validated = false
-                    field.message = label+' cannot be empty'
-                }else if(!/.+\@.+\..+/.test(field.value) && label === 'Email'){
+                    field.message = label + ' cannot be empty'
+                } else if (!/.+\@.+\..+/.test(field.value) && label === 'Email') {
                     field.validated = false
                     field.message = 'Looks like this is not an email'
-                }else{
+                } else {
                     field.validated = true
                     field.message = ''
                 }
